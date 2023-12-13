@@ -1,0 +1,41 @@
+{
+  "name": "iwpdev/custom-price-condition-manager",
+  "homepage": "https://i-wp-dev.com/",
+  "type": "wordpres-plugin",
+  "autoload": {
+    "psr-4": {
+      "CustomPriceConditionManager\\": "src/php"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "CustomPriceConditionManager\\": "src/php"
+    }
+  },
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "alexl",
+      "email": "adminv@i-wp-dev.com"
+    }
+  ],
+  "config": {
+    "platform": {
+      "php": "7.4"
+    }
+  },
+  "minimum-stability": "dev",
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "squizlabs/php_codesniffer": "^3.5",
+    "phpcompatibility/php-compatibility": "^9.3",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "wp-coding-standards/wpcs": "^2.3",
+    "php-coveralls/php-coveralls": "^2.4"
+  },
+  "require": {
+  },
+  "scripts": {
+    "phpcs": "vendor/bin/phpcs --colors --standard=phpcs.xml"
+  }
+}

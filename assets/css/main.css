@@ -1,0 +1,48 @@
+.conditions {
+	margin-bottom: 30px;
+	padding: 40px 0;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.conditions h5 {
+	margin-top: 0;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.conditions ul {
+	padding-left: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+}
+
+.conditions ul button {
+	border-radius: 20px;
+	padding: 0 20px;
+	color: #000 !important;
+	border: 1px solid #000000;
+	background-color: transparent !important;
+	height: 32px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.conditions .condition-price:not(.active):hover {
+	border-color: #000;
+	color: #000;
+}
+
+.conditions .condition-price.active {
+	background: #000000 !important;
+	color: #fff !important;
+}
