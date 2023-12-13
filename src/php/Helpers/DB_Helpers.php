@@ -7,7 +7,6 @@
 
 namespace CustomPriceConditionManager\Helpers;
 
-
 use CustomPriceConditionManager\Admin\PriceConditionManagerAdmin;
 
 /**

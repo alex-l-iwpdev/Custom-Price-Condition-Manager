@@ -69,7 +69,6 @@ class PriceConditionManagerFront {
 
 		$price_conditions = DB_Helpers::get_all_price_condition( $post->ID );
 
-
 		if ( empty( $price_conditions ) ) {
 			return;
 		}

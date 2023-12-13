@@ -68,18 +68,21 @@ define( 'CPCM_URL', untrailingslashit( plugin_dir_url( CPCM_FILE ) ) );
  */
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-/**
- * Check php version.
- *
- * @return bool
- * @noinspection ConstantCanBeUsedInspection
- */
-function cpcm_is_php_version(): bool {
-	if ( version_compare( PHP_VERSION, CPCM_PHP_REQUIRED_VERSION, '<' ) ) {
-		return false;
-	}
 
-	return true;
+if ( ! function_exists( 'cpcm_is_php_version' ) ) {
+	/**
+	 * Check php version.
+	 *
+	 * @return bool
+	 * @noinspection ConstantCanBeUsedInspection
+	 */
+	function cpcm_is_php_version(): bool {
+		if ( version_compare( PHP_VERSION, CPCM_PHP_REQUIRED_VERSION, '<' ) ) {
+			return false;
+		}
+
+		return true;
+	}
 }
 
 if ( ! cpcm_is_php_version() ) {
