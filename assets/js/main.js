@@ -8,7 +8,6 @@ jQuery( document ).ready( function( $ ) {
 		conditionPriceBtn.click( function( e ) {
 			e.preventDefault();
 			setPriceConditions( $( this ) );
-			console.log('dasd');
 		} );
 	}
 
@@ -24,7 +23,8 @@ jQuery( document ).ready( function( $ ) {
 	 */
 	function setPriceConditions( el ) {
 		$( '.condition-price' ).removeClass( 'active' );
-		const oldPrice = $( '.summary.entry-summary .price' );
+		const oldPrice = $( '.summary.entry-summary .price, .wc-block-components-product-price:first' );
+		console.log(oldPrice);
 		const newPrice = $( el ).data( 'price' );
 		const symbol = oldPrice.find( '.woocommerce-Price-currencySymbol' ).text().charAt( 0 );
 

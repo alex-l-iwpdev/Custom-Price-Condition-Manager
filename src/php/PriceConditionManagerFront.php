@@ -30,7 +30,7 @@ class PriceConditionManagerFront {
 	 * @return void
 	 */
 	private function init(): void {
-		add_action( 'woocommerce_single_product_summary', [ $this, 'show_price_conditions' ], 25 );
+		add_action( 'woocommerce_after_add_to_cart_form', [ $this, 'show_price_conditions' ], 25 );
 
 		add_filter( 'woocommerce_add_cart_item_data', [ $this, 'add_price_condition_value' ], 10, 3 );
 		add_action( 'woocommerce_before_add_to_cart_button', [ $this, 'add_hidden_field_to_single_product_page' ] );

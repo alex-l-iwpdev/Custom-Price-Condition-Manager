@@ -150,7 +150,10 @@ class DB_Helpers {
 
 		$table_name = $wpdb->prefix . PriceConditionManagerAdmin::CPCM_PRICE_CONDITION_TABLE_NAME;
 		// phpcs:disable
-		$result = $wpdb->get_row( "SELECT title FROM $table_name WHERE id = $condition_id", ARRAY_A );
+		$result = $wpdb->get_row(
+			$wpdb->prepare( "SELECT title FROM $table_name WHERE id = %d", $condition_id ),
+			ARRAY_A
+		);
 		// phpcs:enable
 
 		if ( ! empty( $result ) ) {
