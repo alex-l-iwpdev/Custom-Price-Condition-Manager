@@ -16,22 +16,22 @@ class PriceConditionManagerAdmin {
 	/**
 	 * Price condition table name.
 	 */
-	public const CPCM_PRICE_CONDITION_TABLE_NAME = 'price_conditions';
+	public const CPCM_PRICE_CONDITION_TABLE_NAME = 'cpcm_price_conditions';
 
 	/**
 	 * Add new price condition action and nonce name;
 	 */
-	public const CPCM_PRICE_CONDITION_ADD_ACTION_NAME = 'ms_price_conditions_add';
+	public const CPCM_PRICE_CONDITION_ADD_ACTION_NAME = 'cpcm_price_conditions_add';
 
 	/**
 	 * Delete price condition.
 	 */
-	public const CPCM_PRICE_CONDITION_DELETE_ACTION_NAME = 'ms_price_condition_delete';
+	public const CPCM_PRICE_CONDITION_DELETE_ACTION_NAME = 'cpcm_price_condition_delete';
 
 	/**
 	 * Save price condition after edit.
 	 */
-	public const CPCM_PRICE_CONDITION_SAVE_ACTION_NAME = 'ms_price_condition_save';
+	public const CPCM_PRICE_CONDITION_SAVE_ACTION_NAME = 'cpcm_price_condition_save';
 
 	/**
 	 * PriceConditionManager construct.
@@ -147,7 +147,7 @@ class PriceConditionManagerAdmin {
 	 * @return void
 	 */
 	public function add_price_condition_table(): void {
-		$price_table = get_option( 'price_condition_table', false );
+		$price_table = get_option( 'cpcm_price_condition_table', false );
 
 		if ( ! $price_table ) {
 			global $wpdb;
@@ -166,7 +166,7 @@ class PriceConditionManagerAdmin {
 
 			require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 			// phpcs:enable
-			add_option( 'price_condition_table', true );
+			add_option( 'cpcm_price_condition_table', true );
 			dbDelta( $sql );
 		}
 

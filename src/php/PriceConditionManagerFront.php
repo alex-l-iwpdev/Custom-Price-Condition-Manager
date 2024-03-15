@@ -126,8 +126,8 @@ class PriceConditionManagerFront {
 	 */
 	public function add_price_condition_value( array $cart_item_data, int $product_id, int $variation_id ): array {
 		// phpcs:disable
-		$new_price    = ! empty( $_POST['ms_price_condition'] ) ? filter_var( wp_unslash( $_POST['ms_price_condition'] ), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION ) : null;
-		$condition_id = ! empty( $_POST['ms_price_condition_id'] ) ? filter_var( wp_unslash( $_POST['ms_price_condition_id'] ), FILTER_SANITIZE_NUMBER_INT ) : null;
+		$new_price    = ! empty( $_POST['cpcm_price_condition'] ) ? filter_var( wp_unslash( $_POST['cpcm_price_condition'] ), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION ) : null;
+		$condition_id = ! empty( $_POST['cpcm_price_condition_id'] ) ? filter_var( wp_unslash( $_POST['cpcm_price_condition_id'] ), FILTER_SANITIZE_NUMBER_INT ) : null;
 		// phpcs:enable
 
 		if ( ! empty( $new_price ) && ! empty( $condition_id ) ) {
@@ -152,8 +152,8 @@ class PriceConditionManagerFront {
 			return;
 		}
 
-		echo '<input type="hidden" name="ms_price_condition" value="">';
-		echo '<input type="hidden" name="ms_price_condition_id" value="">';
+		echo '<input type="hidden" name="cpcm_price_condition" value="">';
+		echo '<input type="hidden" name="cpcm_price_condition_id" value="">';
 
 	}
 
@@ -201,13 +201,13 @@ class PriceConditionManagerFront {
 	 */
 	public function show_price_condition_in_order_page_front( int $item_id, $item, $order ) {
 
-		$ms_price_condition = $item->get_meta( 'condition_id' );
-		$condition_title    = '';
-		if ( ! empty( $ms_price_condition ) ) {
-			$condition_title = DB_Helpers::get_price_condition_by_id( $ms_price_condition );
+		$cpcm_price_condition = $item->get_meta( 'condition_id' );
+		$condition_title      = '';
+		if ( ! empty( $cpcm_price_condition ) ) {
+			$condition_title = DB_Helpers::get_price_condition_by_id( $cpcm_price_condition );
 		}
 
-		if ( $ms_price_condition ) {
+		if ( $cpcm_price_condition ) {
 			echo '<p><strong>' . esc_html( __( 'Price condition:', 'arostore' ) ) . '</strong> ' . esc_html( $condition_title['title'] ) . '</p>';
 		}
 

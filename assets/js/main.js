@@ -35,7 +35,7 @@ jQuery( document ).ready( function( $ ) {
 			oldPrice.find( '.woocommerce-Price-amount.amount' ).html( `<span class="woocommerce-Price-currencySymbol">${symbol}</span> ${newPrice}` );
 		}
 
-		$( '[name=ms_price_condition]' ).val( newPrice );
-		$( '[name=ms_price_condition_id]' ).val( $( el ).data( 'id' ) );
+		$( '[name=cpcm_price_condition]' ).val( newPrice );
+		$( '[name=cpcm_price_condition_id]' ).val( $( el ).data( 'id' ) );
 	}
 } );
